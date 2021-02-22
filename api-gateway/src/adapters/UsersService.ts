@@ -4,15 +4,15 @@ import got from "got";
 const USERS_SERVICE_URI = <string>config.get("USERS_SERVICE_URI");
 
 export interface User {
+  _id: string;
   createdAt: string;
-  id: string;
   username: string;
 }
 
 export interface UserSession {
+  _id: string;
   createdAt: string;
   expiresAt: string;
-  id: string;
   userId: string;
 }
 
