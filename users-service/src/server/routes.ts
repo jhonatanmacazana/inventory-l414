@@ -49,9 +49,9 @@ const setupRoutes = (app: Express) => {
         userId: user._id,
       };
 
-      await UserSession.create(userSession);
+      const userSessionCreated = await UserSession.create(userSession);
 
-      return res.json(userSession);
+      return res.json(userSessionCreated);
     } catch (err) {
       return next(err);
     }
@@ -102,9 +102,9 @@ const setupRoutes = (app: Express) => {
         username,
       };
 
-      await User.create(newUser);
+      const newUserCreated = await User.create(newUser);
 
-      return res.json(omit(newUser, ["passwordHash"]));
+      return res.json(omit(newUserCreated, ["passwordHash"]));
     } catch (err) {
       return next(err);
     }
